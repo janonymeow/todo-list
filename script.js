@@ -1,20 +1,21 @@
 function addTask() {
-    const input = document.getElementByID("taskInput");
-    const taskText = input.value.trim();
-
-    if (taskText === "") return;
-
-    const li = document.createElement("li");
-    li.textContent = taskText;
-
-    li.addEventListener("click", () => {
-        li.classList.toggle("done");
+    const input = document.getElementById('taskInput');
+    const task = input.value.trim();
+  
+    if (task === '') return;
+  
+    const li = document.createElement('li');
+    li.textContent = task;
+  
+    li.addEventListener('click', () => {
+      li.classList.toggle('done');
     });
-
-    li.addEventListener("dblclick", () => {
-        li.remove();
+  
+    li.addEventListener('dblclick', () => {
+      li.remove();
     });
-
-    document.getElementById("taskList").appendChild(li);
-    input.value = "";
-}
+  
+    document.getElementById('taskList').appendChild(li);
+    input.value = '';
+  }
+  
