@@ -1,21 +1,24 @@
+
 function addTask() {
-    const input = document.getElementById('taskInput');
-    const task = input.value.trim();
-  
-    if (task === '') return;
-  
-    const li = document.createElement('li');
-    li.textContent = task;
-  
+  const inputBox = document.getElementById("input-box");
+  const listContainer = document.getElementById("list-container");
+
+      if(inputBox.value === '') {
+       alert("You must write something"); 
+      }
+    
+      let li = document.createElement("li");
+      li.innerHTML = inputBox.value;
+      listContainer.appendChild(li);
+    
+
     li.addEventListener('click', () => {
-      li.classList.toggle('done');
+      li.classList.toggle('checked');
     });
-  
+
     li.addEventListener('dblclick', () => {
       li.remove();
     });
-  
-    document.getElementById('taskList').appendChild(li);
-    input.value = '';
+
   }
-  
+ 
